@@ -1,6 +1,4 @@
 # Marketing-Analytics
-## Marketing-Analytics
-### Marketing-Analytics
 Marketing Analytics on E-commerce dataset using SQL
 
 
@@ -11,3 +9,5 @@ left join orders o
 on ws.website_session_id=o.website_session_id
 where year(ws.created_at)=2012
 group by  month(ws.created_at);`
+
+![test](https://user-images.githubusercontent.com/113862057/192161698-a3c17943-0f78-4ea3-abff-8ace7dec9cb5.png)
