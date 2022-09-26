@@ -531,7 +531,7 @@ GROUP  BY device_type,
           utm_source; 
 ```   
 
-**Output**
+**Output**  
 ![Screenshot_17](https://user-images.githubusercontent.com/113862057/192192700-9c0d08bf-a26c-4f04-b49f-03654347df44.png)
 
  **Insights & Actions**  
