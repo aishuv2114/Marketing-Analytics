@@ -1,6 +1,7 @@
 # Marketing-Analytics
-Marketing Analytics on E-commerce dataset using SQL
+##Marketing Analytics on E-commerce dataset using SQL
 
+###Analyzing Website Traffic Sources
 
 `use mavenfuzzyfactory; 
 select month(ws.created_at) as 'Month', count(distinct ws.website_session_id) as 'Sessions', count(distinct o.order_id) as 'Orders'
