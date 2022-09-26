@@ -423,3 +423,129 @@ FROM   final_output;
 The lander, Mr. Fuzzy page ,and the billing page have the lowest click rates.
 
 
+2)The team has tested an updated billing page based on the funnel analysis. There is a new request to see whether /billing 2 is doing any better than the original /billing page and what % of sessions on those pages end up placing an order . This test is for all traffic, not just for the search visitors
+
+```sql
+SELECT Date(Min(created_at)),
+       Min(website_pageview_id)
+FROM   website_pageviews
+WHERE  pageview_url = '/billing-2';
+
+SELECT pageview_url,
+       Count(DISTINCT wp.website_session_id) AS 'sessions',
+       Count(DISTINCT order_id) AS 'orders',
+       Count(DISTINCT order_id) / Count(DISTINCT wp.website_session_id) AS 'billing_to_order_rt'
+FROM   website_pageviews wp
+       LEFT JOIN orders o
+              ON wp. website_session_id = o.website_session_id
+WHERE  ( wp.created_at >= '2012-09-10'
+         AND wp.created_at < '2012-11-10' )
+       AND pageview_url LIKE '%billing%'
+GROUP  BY pageview_url; 
+```
+
+ **Output**  
+ ![Screenshot_14](https://user-images.githubusercontent.com/113862057/192190985-65061cbb-5349-4d0f-b118-ec7123053e27.png)
+ 
+ **Insights & Actions**  
+The new version of the billing page is doing a much better job converting customers
+As a next step,the Engineering team could roll this out to all customers
+
+
+### **Analyzing Channel Portfolios**
+
+**Objective**  
+Analyzing a portfolio of marketing channels is about bidding efficiently and using data to maximize the effectiveness of your marketing budget.
+This helps in understanding which marketing channels are driving the most sessions and orders through the website,optimizing bids and allocating marketing spend across a multi-channel portfolio to achieve maximum performance.
+
+1)The oragnization has launched another paid search channel-bsearch since Aug 22,2012.This marketing director has a data request to view weekly trended sessions since then and compare it to gsearch nonbrand
+
+```sql
+WITH gsearch_nonbrand_sessions
+     AS (SELECT Min(Date(created_at))  AS week_start_date,
+                Count(DISTINCT website_session_id) AS gsearch_sessions
+         FROM   website_sessions
+         WHERE  utm_source = 'gsearch'
+                AND utm_campaign = 'nonbrand'
+                AND ( created_at > '2012-08-22'
+                      AND created_at < '2012-11-29' )
+         GROUP  BY Week(created_at)),
+     bsearch_sessions
+     AS (SELECT Min(Date(created_at)) AS week_start_date,
+                Count(DISTINCT website_session_id) AS bsearch_sessions
+         FROM   website_sessions
+         WHERE  utm_source = 'bsearch'
+                AND utm_campaign = 'nonbrand'
+                AND ( created_at > '2012-08-22'
+                      AND created_at < '2012-11-29' )
+         GROUP  BY Week(created_at))
+SELECT g.week_start_date,
+       gsearch_sessions,
+       bsearch_sessions
+FROM   gsearch_nonbrand_sessions g
+       LEFT JOIN bsearch_sessions b
+              ON g.week_start_date = b.week_start_date; 
+```
+
+
+ **Output**  
+![Screenshot_15](https://user-images.githubusercontent.com/113862057/192191674-88e02588-9feb-4a69-83ce-5904279d75eb.png)
+
+ **Insights & Actions**  
+Bsearch tends to get roughly a third the traffic of gsearch
+
+2)The marketing director would like to learn more about the bsearch nonbrand campaign and would like to see the percentage of traffic coming on Mobile , and compare that to gsearch
+
+```sql
+SELECT utm_source,
+       Count(DISTINCT website_session_id),
+       Count(CASE WHEN device_type = 'mobile' THEN website_session_id end) AS mobile_sessions,
+       Count(CASE WHEN device_type = 'mobile' THEN website_session_id end) / Count(DISTINCT website_session_id) AS pct_mobile
+FROM   website_sessions
+WHERE  utm_source IN ( 'bsearch', 'gsearch' )
+       AND utm_campaign = 'nonbrand'
+       AND ( created_at > '2012-08-22'
+             AND created_at < '2012-11-30' )
+GROUP  BY utm_source; 
+```
+
+ **Output**  
+![Screenshot_16](https://user-images.githubusercontent.com/113862057/192192119-d746123c-e6da-4039-9f5d-0242a74fbd7b.png)
+
+3)The executive team wants a report on nonbrand conversion rates from session to order for gsearch and bsearch, aslicing the data by device type from
+August 22 to September 18
+
+```sql
+SELECT device_type,
+       utm_source,
+       Count(DISTINCT ws.website_session_id) AS sessions,
+       Count(DISTINCT o.order_id) AS orders,
+       Count(DISTINCT o.order_id) / Count(DISTINCT ws.website_session_id) AS 'conv_rate'
+FROM   website_sessions ws
+       LEFT JOIN orders o
+              ON ws.website_session_id = o.website_session_id
+WHERE  utm_campaign = 'nonbrand'
+       AND ( ws.created_at >= '2012-08-22'
+             AND ws.created_at <= '2012-09-19' )
+GROUP  BY device_type,
+          utm_source; 
+```   
+
+**Output**
+![Screenshot_17](https://user-images.githubusercontent.com/113862057/192192700-9c0d08bf-a26c-4f04-b49f-03654347df44.png)
+
+ **Insights & Actions**  
+The channels don’t perform identically,the bids can be differentiated in order to optimize the overall paid marketing budget
+bsearch can be bid down based on its under performance
+
+
+
+
+
+ 
+
+
+
+
+ 
+
