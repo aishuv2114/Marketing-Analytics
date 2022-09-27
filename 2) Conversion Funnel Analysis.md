@@ -1,4 +1,4 @@
-## Marketing Analytics on E-commerce dataset using SQL - Part 2 of 4
+## Marketing Analytics on E-commerce dataset using SQL - Part 2 of 5
 
 ### **Conversion Funnel Analysis**
 
