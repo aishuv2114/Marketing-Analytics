@@ -1,4 +1,4 @@
-## Marketing Analytics on E-commerce dataset using SQL - Part 1 of 4
+## Marketing Analytics on E-commerce dataset using SQL - Part 1 of 5
 
 ### **Analyzing Website Traffic Sources**
 
