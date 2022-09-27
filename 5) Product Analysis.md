@@ -39,7 +39,7 @@ GROUP  BY Year(ws.created_at),
           Month(ws.created_at); 
 ```        
 
-**Output** 
+**Output**  
 ![Screenshot_22](https://user-images.githubusercontent.com/113862057/192411564-21b2080e-5292-4c46-9f43-01b656aecc1a.png)
 
 
@@ -219,7 +219,7 @@ FROM   conv_rate c
 
  ```
  
- **Output** 
+ **Output**  
  ![Screenshot_25](https://user-images.githubusercontent.com/113862057/192415416-cf9b216e-30cf-49c1-be4d-07bc2c12a451.png)
  
  
