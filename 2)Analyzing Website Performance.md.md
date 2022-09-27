@@ -17,7 +17,7 @@ ORDER  BY Count(DISTINCT website_session_id) DESC;
 **Output**  
 ![Screenshot_5](https://user-images.githubusercontent.com/113862057/192184728-af8e9ca4-cbb3-4531-b00e-5f531880e6c2.png)
 
-**Insights & Actions**
+**Insights & Actions**  
 The homepage, the products page,and the Mr. Fuzzy page get the bulk of the traffic.
 
 2)The website manager wants to confirm where the users are hitting the site. She wants to rank all entry pages based on entry volume.
@@ -43,7 +43,7 @@ FROM   pageview_url_name;
 **Output**   
 ![Screenshot_6](https://user-images.githubusercontent.com/113862057/192185837-e68e34ac-24f5-499c-9f3a-888f1fd3d9a0.png)
 
-**Insights & Actions**
+**Insights & Actions**  
 All  traffic all comes in through the homepage 
 There has to be improvements made to attract traffic sources from alternate entry pages
 
@@ -74,7 +74,7 @@ FROM   total_sessions ts
 ![Screenshot_7](https://user-images.githubusercontent.com/113862057/192186393-638263a1-3482-410c-8923-b97e63271c8a.png)
 
 
-**Insights & Actions**
+**Insights & Actions**  
 There is a 60% bounce rate which is very high for a paid search 
 The website team could work on a custom landing page for search, and set up an experiment to see if the new page does better. 
 
@@ -126,7 +126,7 @@ FROM   bounced_sessions bs
 ![Screenshot_8](https://user-images.githubusercontent.com/113862057/192187062-acb7c7b4-fd27-4543-8ccf-e38ee9423801.png)
 
 
-**Insights & Actions**
+**Insights & Actions**  
 - The custom lander has a lower bounce rate success
 - As a next step, the business can get the campaigns updated so that all nonbrand paid traffic is pointing to the new page. 
 
@@ -200,6 +200,6 @@ FROM   bounce_rate br
 ![Screenshot_9](https://user-images.githubusercontent.com/113862057/192188098-90fe0901-27cf-4c5b-b264-41126cb52ce1.png)
 
 
-**Insights & Actions**
+**Insights & Actions**  
 The overall bounce rate has come down over time
 
