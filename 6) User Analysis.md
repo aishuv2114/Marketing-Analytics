@@ -124,6 +124,32 @@ GROUP  BY channel_group;
 - Only about 1/3 come through a paid channel, and brand clicks are cheaper than nonbrand. 
 
 
-4)
+4)This query does a comparison of the conversion rates and revenue per session for repeat sessions vs new sessions for 2014 to date.
+
+```sql
+SELECT is_repeat_session,
+       Count(DISTINCT ws.website_session_id)                              AS
+       '#Sessions',
+       Count(DISTINCT o.order_id)                                         AS
+       '#Orders',
+       Count(DISTINCT o.order_id) / Count(DISTINCT ws.website_session_id) AS
+       'Conv_Rate',
+       Sum(price_usd) / Count(DISTINCT ws.website_session_id)             AS
+       'Rev_Per_Session'
+FROM   website_sessions ws
+       LEFT JOIN orders o
+              ON ws.website_session_id = o.website_session_id
+WHERE  Date(ws.created_at) >= '2014-01-01'
+       AND Date(ws.created_at) <= '2014-11-07'
+GROUP  BY is_repeat_session; 
+```
+
+**Output**  
+![Screenshot_29](https://user-images.githubusercontent.com/113862057/192421261-9b65cfd5-e961-41a0-96aa-ed9929c55196.png)
+
+**Insights**  
+- Repeat sessions are more likely to convert , and produce more revenue per session.
+
+
 
 
