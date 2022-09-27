@@ -124,3 +124,6 @@ GROUP  BY channel_group;
 - Only about 1/3 come through a paid channel, and brand clicks are cheaper than nonbrand. 
 
 
+4)
+
+
