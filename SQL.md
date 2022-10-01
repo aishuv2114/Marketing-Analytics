@@ -41,7 +41,7 @@ ORDER  BY sessions DESC;
 **Output**  
 ![Screenshot_10](https://user-images.githubusercontent.com/113862057/192175252-531acdb8-e749-497c-9ed1-8b9cfa6c76db.png)
 
-**Insights & Actions**
+**Insights**  
 - This shows that 97.4% of the traffic source is from gsearch nonbrand.  
 
 *1.2)The leadership team would like to analyze if those sessions are driving sales(Conversion Rate from session to order).*  
@@ -62,7 +62,7 @@ WHERE  utm_source = 'gsearch'
 **Output**  
 ![Screenshot_1](https://user-images.githubusercontent.com/113862057/192175590-3b5b22db-8803-46b2-8ec4-8710c2d96915.png)
 
-**Insights & Actions**
+**Insights**
 - The expected CVR is atleast 4% to make numbers work, based on what the company is paying for clicks. 
 - The business can dial down bids for gsearch nonbrand to see check if there is a drop in volume
 
@@ -81,7 +81,7 @@ GROUP  BY Week(created_at);
 **Output**  
 ![Screenshot_2](https://user-images.githubusercontent.com/113862057/192181958-96a264ee-7879-491f-b3ad-2854c4e1f6f3.png)
 
-**Insights & Actions**
+**Insights**
 - The gsearch nonbrand is sensitive to bid changes. 
 - A device level analysis could be done to check which device has a stronger impact on volume to make bid changes accordingly.
 
@@ -104,7 +104,7 @@ GROUP  BY device_type;
 **Output**  
 ![Screenshot_3](https://user-images.githubusercontent.com/113862057/192182668-38e19a1d-ad3e-4608-8df6-e291d8600bec.png)
 
-**Insights & Actions**
+**Insights**
 - The desktop performance for gsearch nonbrand is better than on mobile. 
 - The business can increase the bids on desktop
 
@@ -130,7 +130,7 @@ GROUP  BY Week(created_at);
 ![Screenshot_4](https://user-images.githubusercontent.com/113862057/192183278-23feac7f-5c8a-4951-ac3f-eb1405f25953.png)
 
 
-**Insights & Actions**
+**Insights**
 Desktop performance is looking strong thanks to the bid changes the company made based on the previous conversion analysis.
 
 ### **Analyzing Website Performance**
@@ -152,7 +152,7 @@ ORDER  BY Count(DISTINCT website_session_id) DESC;
 **Output**  
 ![Screenshot_5](https://user-images.githubusercontent.com/113862057/192184728-af8e9ca4-cbb3-4531-b00e-5f531880e6c2.png)
 
-**Insights & Actions**  
+**Insights**  
 The homepage, the products page,and the Mr. Fuzzy page get the bulk of the traffic.
 
 *2.2)The website manager wants to confirm where the users are hitting the site. She wants to rank all entry pages based on entry volume.*  
@@ -178,7 +178,7 @@ FROM   pageview_url_name;
 **Output**   
 ![Screenshot_6](https://user-images.githubusercontent.com/113862057/192185837-e68e34ac-24f5-499c-9f3a-888f1fd3d9a0.png)
 
-**Insights & Actions**  
+**Insights**  
 All  traffic comes in through the homepage 
 Improvements can be made to attract traffic sources from alternate entry pages to increase volume
 
@@ -209,7 +209,7 @@ FROM   total_sessions ts
 ![Screenshot_7](https://user-images.githubusercontent.com/113862057/192186393-638263a1-3482-410c-8923-b97e63271c8a.png)
 
 
-**Insights & Actions**  
+**Insights**  
 There is a 60% bounce rate which is very high for a paid search  
 The website team could work on a custom landing page for search, and set up an experiment to see if the new page does better. 
 
@@ -261,7 +261,7 @@ FROM   bounced_sessions bs
 ![Screenshot_8](https://user-images.githubusercontent.com/113862057/192187062-acb7c7b4-fd27-4543-8ccf-e38ee9423801.png)
 
 
-**Insights & Actions**  
+**Insights**  
 - The custom lander has a lower bounce rate success
 - As a next step, the business can get the campaigns updated so that all nonbrand paid traffic is pointing to the new page. 
 
@@ -335,7 +335,7 @@ FROM   bounce_rate br
 ![Screenshot_9](https://user-images.githubusercontent.com/113862057/192188098-90fe0901-27cf-4c5b-b264-41126cb52ce1.png)
 
 
-**Insights & Actions**  
+**Insights**  
 The overall bounce rate has come down over time
 
 
@@ -437,7 +437,7 @@ FROM   final_output;
 ![Screenshot_11](https://user-images.githubusercontent.com/113862057/192189183-760753f6-d918-4e1f-8886-75c9cdad9ef3.png)
 ![Screenshot_13](https://user-images.githubusercontent.com/113862057/192190442-e7add925-c100-4861-b104-4e596fe80dc2.png)
 
-**Insights & Actions**  
+**Insights**  
 The lander, Mr. Fuzzy page ,and the billing page have the lowest click rates.
 
 
@@ -465,7 +465,7 @@ GROUP  BY pageview_url;
  **Output**  
  ![Screenshot_14](https://user-images.githubusercontent.com/113862057/192190985-65061cbb-5349-4d0f-b118-ec7123053e27.png)
  
- **Insights & Actions**  
+ **Insights**  
 The new version of the billing page is doing a much better job converting customers
 As a next step,the Engineering team could roll this out to all customers
 
@@ -510,7 +510,7 @@ FROM   gsearch_nonbrand_sessions g
  **Output**  
 ![Screenshot_15](https://user-images.githubusercontent.com/113862057/192191674-88e02588-9feb-4a69-83ce-5904279d75eb.png)
 
- **Insights & Actions**  
+ **Insights**  
 Bsearch tends to get roughly a third the traffic of gsearch
 
 *4.2)The marketing director would like to learn more about the bsearch nonbrand campaign and would like to see the percentage of traffic coming on Mobile , and compare that to gsearch*  
@@ -553,7 +553,7 @@ GROUP  BY device_type,
 **Output**  
 ![Screenshot_17](https://user-images.githubusercontent.com/113862057/192192700-9c0d08bf-a26c-4f04-b49f-03654347df44.png)
 
- **Insights & Actions**  
+ **Insights**  
 The channels don’t perform identically,the bids can be differentiated in order to optimize the overall paid marketing budget
 bsearch can be bid down based on its under performance
 
@@ -580,7 +580,7 @@ GROUP  BY Week(created_at);
 **Output**  
 ![Screenshot_18](https://user-images.githubusercontent.com/113862057/192407352-de7ba2d6-bde2-4587-9ab9-24f94e39b00e.png)
 
- **Insights & Actions**  
+ **Insights**  
  - bsearch traffic dropped off a bit after the bid down . 
  - It also looks like gsearch was down too after Black Friday and Cyber Monday, but bsearch dropped even more
  
@@ -609,7 +609,7 @@ GROUP  BY Month(created_at);
 ![Screenshot_19](https://user-images.githubusercontent.com/113862057/192410114-b9bd7a9b-1f19-4687-bf9c-e9387deac07b.png)
 
 
- **Insights & Actions**  
+ **Insights**  
 The analysis shows that direct and organic volumes are growing. 
 
 
@@ -658,7 +658,7 @@ GROUP  BY Year(ws.created_at),
 ![Screenshot_22](https://user-images.githubusercontent.com/113862057/192411564-21b2080e-5292-4c46-9f43-01b656aecc1a.png)
 
 
- **Insights & Actions**  
+ **Insights**  
  - This confirms that our conversion rate and revenue per session are improving over time
  - However,further analysis needs to be done to see if the increase is due to the new product launch or just a continuation of overall business improvements
  
@@ -780,7 +780,7 @@ GROUP  BY time_period;
 **Output**  
 ![Screenshot_24](https://user-images.githubusercontent.com/113862057/192414946-5b6fff1d-ec1b-411f-a546-064ef7cda7bb.png)
 
- **Insights & Actions**  
+ **Insights**  
 The CTR from the /cart page didn’t go down and the products per order, AOV, and revenue per /cart session are all up slightly since the
 cross sell feature was added
 
