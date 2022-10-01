@@ -7,11 +7,11 @@ Under each business question I have provided the SQL query, output and my insigh
 # Focus Areas
 
 [Website Traffic Analysis](#analyzing-website-traffic-sources)  
-**Analysing Website Performance**  
-**Conversion Funnel Analysis**   
-**Marketing Channel Analysis**  
-**Product Analysis**   
-**User Analysis**   
+[Analyzing Website Performance](#analyzing-website-performance)  
+[Conversion Funnel Analysis](#conversion-funnel-analysis)  
+[Marketing Channel Analysis](#marketing-channel-analysis)  
+[Product Analysis](#product-analysis)  
+[User Analysis](#user-analysis)  
 
 
 # ER Diagram
@@ -133,7 +133,7 @@ GROUP  BY Week(created_at);
 **Insights & Actions**
 Desktop performance is looking strong thanks to the bid changes the company made based on the previous conversion analysis.
 
-### **Analyzing Website Traffic Sources**
+### **Analyzing Website Performance**
 
 **Objective**  
 Website content analysis is about understanding which pages are seen the most by users, to identify where to focus on improving the business
@@ -339,7 +339,6 @@ FROM   bounce_rate br
 The overall bounce rate has come down over time
 
 
-## Marketing Analytics on E-commerce dataset using SQL - Part 2 of 5
 
 ### **Conversion Funnel Analysis**
 
@@ -471,9 +470,8 @@ The new version of the billing page is doing a much better job converting custom
 As a next step,the Engineering team could roll this out to all customers
 
 
-## Marketing Analytics on E-commerce dataset using SQL - Part 3 of 5
 
-### **Analyzing Channel Portfolios**
+### **Marketing Channel Analysis**
 
 **Objective**  
 Analyzing a portfolio of marketing channels is about bidding efficiently and using data to maximize the effectiveness of your marketing budget.
@@ -615,7 +613,7 @@ GROUP  BY Month(created_at);
 The analysis shows that direct and organic volumes are growing. 
 
 
-## Marketing Analytics on E-commerce dataset using SQL - Part 4 of 5
+
 
 ### **Product Analysis**
 
