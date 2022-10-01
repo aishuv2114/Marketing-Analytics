@@ -781,7 +781,7 @@ GROUP  BY time_period;
 ![Screenshot_24](https://user-images.githubusercontent.com/113862057/192414946-5b6fff1d-ec1b-411f-a546-064ef7cda7bb.png)
 
  **Insights & Actions**  
- It looks like the CTR from the /cart page didn’t go down and the products per order, AOV, and revenue per /cart session are all up slightly since the
+The CTR from the /cart page didn’t go down and the products per order, AOV, and revenue per /cart session are all up slightly since the
 cross sell feature was added
 
 5)On 12th December, 2013, a third product has been launched -"Birthday Bear". There is a request to run a pre-post analysis comparing the month before and the month after , in terms of session to order conversion rate , AOV, Products per order and Revenue per session
@@ -838,12 +838,12 @@ FROM   conv_rate c
  ![Screenshot_25](https://user-images.githubusercontent.com/113862057/192415416-cf9b216e-30cf-49c1-be4d-07bc2c12a451.png)
  
  
-## Marketing Analytics on E-commerce dataset using SQL - Part 4 of 5
+
 
 ### **User Analysis**
 
 **Objective**
-Analyzing repeat visits helps you understand user behavior and identify some of your most valuable customers
+Analyzing repeat visits helps us understand user behavior and identify some of our most valuable customers
 
 1)The marketing director has a request to pull data on how many of the website visitors come back for another session for 2014 to date.
 
@@ -875,7 +875,7 @@ GROUP  BY new_or_repeat;
 ![Screenshot_26](https://user-images.githubusercontent.com/113862057/192419258-d4f2fe17-3c1a-4ef6-a5b2-1f357cb4856d.png)
 
 **Insights**  
-- A fair number of our customers do come back to the site after the first session.
+- A fair number of customers do come back to the site after the first session.
 
 
 2)The marketing director has another request to understand the minimum, maximum, and average time between the first and second session for
