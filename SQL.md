@@ -62,7 +62,7 @@ WHERE  utm_source = 'gsearch'
 **Output**  
 ![Screenshot_1](https://user-images.githubusercontent.com/113862057/192175590-3b5b22db-8803-46b2-8ec4-8710c2d96915.png)
 
-**Insights**
+**Insights**  
 - The expected CVR is atleast 4% to make numbers work, based on what the company is paying for clicks. 
 - The business can dial down bids for gsearch nonbrand to see check if there is a drop in volume
 
@@ -81,7 +81,7 @@ GROUP  BY Week(created_at);
 **Output**  
 ![Screenshot_2](https://user-images.githubusercontent.com/113862057/192181958-96a264ee-7879-491f-b3ad-2854c4e1f6f3.png)
 
-**Insights**
+**Insights**  
 - The gsearch nonbrand is sensitive to bid changes. 
 - A device level analysis could be done to check which device has a stronger impact on volume to make bid changes accordingly.
 
@@ -104,7 +104,7 @@ GROUP  BY device_type;
 **Output**  
 ![Screenshot_3](https://user-images.githubusercontent.com/113862057/192182668-38e19a1d-ad3e-4608-8df6-e291d8600bec.png)
 
-**Insights**
+**Insights**  
 - The desktop performance for gsearch nonbrand is better than on mobile. 
 - The business can increase the bids on desktop
 
@@ -130,8 +130,8 @@ GROUP  BY Week(created_at);
 ![Screenshot_4](https://user-images.githubusercontent.com/113862057/192183278-23feac7f-5c8a-4951-ac3f-eb1405f25953.png)
 
 
-**Insights**
-Desktop performance is looking strong thanks to the bid changes the company made based on the previous conversion analysis.
+**Insights**  
+- Desktop performance is looking strong thanks to the bid changes the company made based on the previous conversion analysis.
 
 ### **Analyzing Website Performance**
 
@@ -153,7 +153,7 @@ ORDER  BY Count(DISTINCT website_session_id) DESC;
 ![Screenshot_5](https://user-images.githubusercontent.com/113862057/192184728-af8e9ca4-cbb3-4531-b00e-5f531880e6c2.png)
 
 **Insights**  
-The homepage, the products page,and the Mr. Fuzzy page get the bulk of the traffic.
+- The homepage, the products page,and the Mr. Fuzzy page get the bulk of the traffic.
 
 *2.2)The website manager wants to confirm where the users are hitting the site. She wants to rank all entry pages based on entry volume.*  
 
@@ -179,8 +179,8 @@ FROM   pageview_url_name;
 ![Screenshot_6](https://user-images.githubusercontent.com/113862057/192185837-e68e34ac-24f5-499c-9f3a-888f1fd3d9a0.png)
 
 **Insights**  
-All  traffic comes in through the homepage 
-Improvements can be made to attract traffic sources from alternate entry pages to increase volume
+- All  traffic comes in through the homepage 
+- Improvements can be made to attract traffic sources from alternate entry pages to increase volume
 
 
 *2.3)The website manager wants to see bounce rates for traffic landing on the homepage- Sessions ,Bounced Sessions , and Bounce Rate.*  
