@@ -64,7 +64,7 @@ WHERE  utm_source = 'gsearch'
 
 **Insights & Actions**
 - The expected CVR is atleast 4% to make numbers work, based on what the company is paying for clicks. 
-- The leadership team has decided to dial down the search bids a bit
+- The business can dial down bids for gsearch nonbrand to see check if there is a drop in volume
 
 3)Post the bid down, the marketing director would like to see the gsearch nonbrand trended session volume, by week, to see if the bid changes have caused volume to drop
 
