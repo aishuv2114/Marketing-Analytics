@@ -24,7 +24,7 @@
 **Objective**  
 Traffic source analysis is about understanding where your customers are coming from and which channels are driving the highest quality traffic
 
-1.1)The leadership team would like to know where the bulk of the website sessions are coming by UTM source , campaign and referring domain 
+*1.1)The leadership team would like to know where the bulk of the website sessions are coming by UTM source , campaign and referring domain*   
 
 ```sql
 SELECT utm_source,
@@ -44,7 +44,7 @@ ORDER  BY sessions DESC;
 **Insights & Actions**
 - This shows that 97.4% of the traffic source is from gsearch nonbrand.  
 
-1.2)The leadership team would like to analyze if those sessions are driving sales(Conversion Rate from session to order).
+*1.2)The leadership team would like to analyze if those sessions are driving sales(Conversion Rate from session to order).*  
 
 ```sql
 SELECT Count(DISTINCT ws.website_session_id) AS 'Sessions',
@@ -66,7 +66,7 @@ WHERE  utm_source = 'gsearch'
 - The expected CVR is atleast 4% to make numbers work, based on what the company is paying for clicks. 
 - The business can dial down bids for gsearch nonbrand to see check if there is a drop in volume
 
-1.3)Post the bid down, the marketing director would like to see the gsearch nonbrand trended session volume, by week, to see if the bid changes have caused volume to drop
+*1.3)Post the bid down, the marketing director would like to see the gsearch nonbrand trended session volume, by week, to see if the bid changes have caused volume to drop*  
 
 ```sql
 SELECT Date(Min(created_at)),
@@ -85,7 +85,7 @@ GROUP  BY Week(created_at);
 - The gsearch nonbrand is sensitive to bid changes. 
 - A device level analysis could be done to check which device has a stronger impact on volume to make bid changes accordingly.
 
-1.4)This query does a conversion rate analysis, from session to order by device type. 
+*1.4)This query does a conversion rate analysis, from session to order by device type.*  
 
 ```sql
 SELECT device_type,
@@ -108,7 +108,7 @@ GROUP  BY device_type;
 - The desktop performance for gsearch nonbrand is better than on mobile. 
 - The business can increase the bids on desktop
 
-1.5)The marketing team wants to do a post analysis to gauge the results of the bid up 
+*1.5)The marketing team wants to do a post analysis to gauge the results of the bid up*  
 
 ```sql
 SELECT Date(Min(created_at)) AS 'Week_Start_date',
@@ -138,7 +138,7 @@ Desktop performance is looking strong thanks to the bid changes the company made
 **Objective**  
 Website content analysis is about understanding which pages are seen the most by users, to identify where to focus on improving the business
 
-2.1)The website manager has a data request to pull the most viewed website pages ranked by session volume
+*2.1)The website manager has a data request to pull the most viewed website pages ranked by session volume*  
 
 ```sql
 SELECT pageview_url,
@@ -155,7 +155,7 @@ ORDER  BY Count(DISTINCT website_session_id) DESC;
 **Insights & Actions**  
 The homepage, the products page,and the Mr. Fuzzy page get the bulk of the traffic.
 
-2.2)The website manager wants to confirm where the users are hitting the site. She wants to rank all entry pages based on entry volume.
+*2.2)The website manager wants to confirm where the users are hitting the site. She wants to rank all entry pages based on entry volume.*  
 
 ```sql
 WITH top_entry_ids
@@ -183,7 +183,7 @@ All  traffic comes in through the homepage
 Improvements can be made to attract traffic sources from alternate entry pages to increase volume
 
 
-2.3)The website manager wants to see bounce rates for traffic landing on the homepage- Sessions ,Bounced Sessions , and Bounce Rate.
+*2.3)The website manager wants to see bounce rates for traffic landing on the homepage- Sessions ,Bounced Sessions , and Bounce Rate.*  
 
 ```sql
 WITH total_sessions
@@ -213,7 +213,7 @@ FROM   total_sessions ts
 There is a 60% bounce rate which is very high for a paid search  
 The website team could work on a custom landing page for search, and set up an experiment to see if the new page does better. 
 
-2.4)Based on the bounce rate analysis, the website team has created a new custom landing page ( (/lander 1 ) in a 50/50 test against the homepage ((/home for our gsearch nonbrand traffic.The team would like to view bounce rates for the two groups to evaluate the new page baseb on a common time frame.
+*2.4)Based on the bounce rate analysis, the website team has created a new custom landing page ( (/lander 1 ) in a 50/50 test against the homepage ((/home for our gsearch nonbrand traffic.The team would like to view bounce rates for the two groups to evaluate the new page baseb on a common time frame.*  
 
 ```sql
 WITH total_sessions
@@ -266,7 +266,7 @@ FROM   bounced_sessions bs
 - As a next step, the business can get the campaigns updated so that all nonbrand paid traffic is pointing to the new page. 
 
 
-2.5)The website manager has a request to pull the volume of paid search nonbrand traffic landing on /home and /lander 1, trended weekly since June 1st and also pull the  overall paid search bounce rate trended weekly  
+*2.5)The website manager has a request to pull the volume of paid search nonbrand traffic landing on /home and /lander 1, trended weekly since June 1st and also pull the  overall paid search bounce rate trended weekly*  
 
 ```sql
 WITH sessions_count
@@ -345,7 +345,7 @@ The overall bounce rate has come down over time
 **Objective**  
 Conversion funnel analysis is about understanding and optimizing each step of your user’s experience on their journey toward purchasing your products
 
-3.1)The website manager would like to understand where the gsearch visitors are lost between the new /lander 1 page and placing an order and would like to see a full conversion funnel, analyzing how many customers make it to each step,starting with /lander 1 and  all the way to the thank you page,since August 5th
+*3.1)The website manager would like to understand where the gsearch visitors are lost between the new /lander 1 page and placing an order and would like to see a full conversion funnel, analyzing how many customers make it to each step,starting with /lander 1 and  all the way to the thank you page,since August 5th*  
 
 ```sql
 SELECT Count(DISTINCT website_session_id) AS 'sessions',
@@ -441,7 +441,7 @@ FROM   final_output;
 The lander, Mr. Fuzzy page ,and the billing page have the lowest click rates.
 
 
-3.2)The team has tested an updated billing page based on the funnel analysis. There is a new request to see whether /billing 2 is doing any better than the original /billing page and what % of sessions on those pages end up placing an order . This test is for all traffic, not just for the search visitors
+*3.2)The team has tested an updated billing page based on the funnel analysis. There is a new request to see whether /billing 2 is doing any better than the original /billing page and what % of sessions on those pages end up placing an order . This test is for all traffic, not just for the search visitors*  
 
 ```sql
 SELECT Date(Min(created_at)),
@@ -477,7 +477,7 @@ As a next step,the Engineering team could roll this out to all customers
 Analyzing a portfolio of marketing channels is about bidding efficiently and using data to maximize the effectiveness of your marketing budget.
 This helps in understanding which marketing channels are driving the most sessions and orders through the website,optimizing bids and allocating marketing spend across a multi-channel portfolio to achieve maximum performance.
 
-4.1)The organization has launched another paid search channel-bsearch since Aug 22,2012.This marketing director has a data request to view weekly trended sessions since then and compare it to gsearch nonbrand
+*4.1)The organization has launched another paid search channel-bsearch since Aug 22,2012.This marketing director has a data request to view weekly trended sessions since then and compare it to gsearch nonbrand*  
 
 ```sql
 WITH gsearch_nonbrand_sessions
@@ -513,7 +513,7 @@ FROM   gsearch_nonbrand_sessions g
  **Insights & Actions**  
 Bsearch tends to get roughly a third the traffic of gsearch
 
-4.2)The marketing director would like to learn more about the bsearch nonbrand campaign and would like to see the percentage of traffic coming on Mobile , and compare that to gsearch
+*4.2)The marketing director would like to learn more about the bsearch nonbrand campaign and would like to see the percentage of traffic coming on Mobile , and compare that to gsearch*  
 
 ```sql
 SELECT utm_source,
@@ -531,8 +531,8 @@ GROUP  BY utm_source;
  **Output**  
 ![Screenshot_16](https://user-images.githubusercontent.com/113862057/192192119-d746123c-e6da-4039-9f5d-0242a74fbd7b.png)
 
-3)The executive team wants a report on nonbrand conversion rates from session to order for gsearch and bsearch, slicing the data by device type from
-August 22 to September 18
+*4.3)The executive team wants a report on nonbrand conversion rates from session to order for gsearch and bsearch, slicing the data by device type from
+August 22 to September 18*  
 
 ```sql
 SELECT device_type,
@@ -558,7 +558,7 @@ The channels don’t perform identically,the bids can be differentiated in order
 bsearch can be bid down based on its under performance
 
 
-4.3)Based on the previous analysis, the company has bid down bsearch nonbrand on Dec 2nd,2012.The team has now requested for weekly session volume for gsearch and bsearch nonbrand, broken down by device, since November 4th.
+*4.4)Based on the previous analysis, the company has bid down bsearch nonbrand on Dec 2nd,2012.The team has now requested for weekly session volume for gsearch and bsearch nonbrand, broken down by device, since November 4th.*  
 
 ```sql
 SELECT Min(Date(created_at)) AS 'Week_Start_Date',
@@ -584,9 +584,9 @@ GROUP  BY Week(created_at);
  - bsearch traffic dropped off a bit after the bid down . 
  - It also looks like gsearch was down too after Black Friday and Cyber Monday, but bsearch dropped even more
  
-4.4)A potential investor is asking if the company is building momentum with its brand or if the company will need to keep relying on paid traffic.
+*4.5)A potential investor is asking if the company is building momentum with its brand or if the company will need to keep relying on paid traffic.
 The executive team has a request to pull pull organic search, direct type in, and paid brand search sessions by month , and show those sessions
-as a % of paid search nonbrand
+as a % of paid search nonbrand*  
 
 ```sql
 SELECT Month(created_at)  AS Mnth,
@@ -620,7 +620,7 @@ The analysis shows that direct and organic volumes are growing.
 **Objective**
 Analyzing product sales helps you understand how each product contributes to your business, and how product launches impact the overall portfolio
 
-5.1)The organization is about to launch a new product, and they would like to do a deep dive on the current flagship product.They want to pull yearly trends to date for number of sales , total revenue , and total margin generated for the business
+*5.1)The organization is about to launch a new product, and they would like to do a deep dive on the current flagship product.They want to pull yearly trends to date for number of sales , total revenue , and total margin generated for the business*  
 
 ```sql
 SELECT Year(created_at),      
@@ -636,7 +636,7 @@ GROUP  BY Year(created_at);
 ![Screenshot_21](https://user-images.githubusercontent.com/113862057/192411215-65ab581a-1066-48ae-8b05-c70dd9657482.png)
 
 
-5.2)The organization has launched a second product  on January 6 th . They would like to see monthly order volume , overall conversion rates , revenue per session , and a breakdown of sales by product , all for the time period since April 1, 2013
+*5.2)The organization has launched a second product  on January 6 th . They would like to see monthly order volume , overall conversion rates , revenue per session , and a breakdown of sales by product , all for the time period since April 1, 2013*  
 
 ```sql
 SELECT Year(ws.created_at)  AS  'yr',
@@ -662,7 +662,7 @@ GROUP  BY Year(ws.created_at),
  - This confirms that our conversion rate and revenue per session are improving over time
  - However,further analysis needs to be done to see if the increase is due to the new product launch or just a continuation of overall business improvements
  
-5.3)The website manager has request to see clickthrough rates from /products since the new product launch on January 6 th 2013 , by product, and compare to the 3 months leading up to launch as a baseline.
+*5.3)The website manager has request to see clickthrough rates from /products since the new product launch on January 6 th 2013 , by product, and compare to the 3 months leading up to launch as a baseline.*  
  
  ```sql
  WITH sessions
@@ -732,9 +732,9 @@ GROUP  BY created_at;
  **Insights**  
 - The percent of /products pageviews that clicked to Mr. Fuzzy has gone down since the launch of the Love Bear,but the overall clickthrough rate has gone up, so it seems to be generating additional product interest overall.
 
-5.4)On September 25th, the organization has started giving customers the option to add a 2 nd product while on the /cart page . The executive team has a request 
+*5.4)On September 25th, the organization has started giving customers the option to add a 2 nd product while on the /cart page . The executive team has a request 
 to compare the month before vs the month after the change ,they would like to see CTR from the /cart page ,Avg Products per Order , AOV , and overall revenue per
-/cart page view
+/cart page view*  
  
  
  ```sql
@@ -784,7 +784,7 @@ GROUP  BY time_period;
 The CTR from the /cart page didn’t go down and the products per order, AOV, and revenue per /cart session are all up slightly since the
 cross sell feature was added
 
-5.5)On 12th December, 2013, a third product has been launched -"Birthday Bear". There is a request to run a pre-post analysis comparing the month before and the month after , in terms of session to order conversion rate , AOV, Products per order and Revenue per session
+*5.5)On 12th December, 2013, a third product has been launched -"Birthday Bear". There is a request to run a pre-post analysis comparing the month before and the month after , in terms of session to order conversion rate , AOV, Products per order and Revenue per session*  
 
  ```sql
  WITH conv_rate
@@ -845,7 +845,7 @@ FROM   conv_rate c
 **Objective**
 Analyzing repeat visits helps us understand user behavior and identify some of our most valuable customers
 
-6.1)The marketing director has a request to pull data on how many of the website visitors come back for another session for 2014 to date.
+*6.1)The marketing director has a request to pull data on how many of the website visitors come back for another session for 2014 to date.*  
 
 ```sql
 WITH cust_2014
@@ -878,8 +878,8 @@ GROUP  BY new_or_repeat;
 - A fair number of customers do come back to the site after the first session.
 
 
-6.2)The marketing director has another request to understand the minimum, maximum, and average time between the first and second session for
-customers who do come back for the same time period.
+*6.2)The marketing director has another request to understand the minimum, maximum, and average time between the first and second session for
+customers who do come back for the same time period.*  
 
 ```sql
 WITH cust_2014
@@ -930,7 +930,7 @@ FROM   difference_btw_sessions;
 **Insights**  
 The repeat visitors are coming back about a month later, on average.
 
-6.3)The marketing director is also curious to understand the channels they come back through,  if it’s all direct type in, or paid search ads multiple times.
+*6.3)The marketing director is also curious to understand the channels they come back through,  if it’s all direct type in, or paid search ads multiple times.*  
 
 ```sql
 SELECT CASE
@@ -964,7 +964,7 @@ GROUP  BY channel_group;
 - Only about 1/3 come through a paid channel, and brand clicks are cheaper than nonbrand. 
 
 
-6.4)This query does a comparison of the conversion rates and revenue per session for repeat sessions vs new sessions for 2014 to date.
+*6.4)This query does a comparison of the conversion rates and revenue per session for repeat sessions vs new sessions for 2014 to date.*  
 
 ```sql
 SELECT is_repeat_session,
