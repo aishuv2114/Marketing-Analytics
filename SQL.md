@@ -179,8 +179,8 @@ FROM   pageview_url_name;
 ![Screenshot_6](https://user-images.githubusercontent.com/113862057/192185837-e68e34ac-24f5-499c-9f3a-888f1fd3d9a0.png)
 
 **Insights & Actions**  
-All  traffic all comes in through the homepage 
-There has to be improvements made to attract traffic sources from alternate entry pages
+All  traffic comes in through the homepage 
+Improvements can be made to attract traffic sources from alternate entry pages to increase volume
 
 
 3)The website manager wants to see bounce rates for traffic landing on the homepage- Sessions ,Bounced Sessions , and Bounce Rate.
