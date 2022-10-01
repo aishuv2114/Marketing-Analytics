@@ -83,9 +83,9 @@ GROUP  BY Week(created_at);
 
 **Insights & Actions**
 - The gsearch nonbrand is sensitive to bid changes. 
-- The executive team wants maximum volume, and want to drill into device level performance for gsearch nonbrand
+- A device level analysis could be done to check which device has a stronger impact on volume to make bid changes accordingly.
 
-4)The marketing director would like a conversion rate analysis, from session to order by device type. 
+4)This query does a conversion rate analysis, from session to order by device type. 
 
 ```sql
 SELECT device_type,
@@ -106,7 +106,7 @@ GROUP  BY device_type;
 
 **Insights & Actions**
 - The desktop performance for gsearch nonbrand is better than on mobile. 
-- The company opts to increase the bids on desktop
+- The business can increase the bids on desktop
 
 5)The marketing team wants to do a post analysis to gauge the results of the bid up 
 
