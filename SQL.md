@@ -210,7 +210,7 @@ FROM   total_sessions ts
 
 
 **Insights & Actions**  
-There is a 60% bounce rate which is very high for a paid search 
+There is a 60% bounce rate which is very high for a paid search  
 The website team could work on a custom landing page for search, and set up an experiment to see if the new page does better. 
 
 4)Based on the bounce rate analysis, the website team has created a new custom landing page ( (/lander 1 ) in a 50/50 test against the homepage ((/home for our gsearch nonbrand traffic.The team would like to view bounce rates for the two groups to evaluate the new page baseb on a common time frame.
@@ -266,7 +266,7 @@ FROM   bounced_sessions bs
 - As a next step, the business can get the campaigns updated so that all nonbrand paid traffic is pointing to the new page. 
 
 
-5)The website manager has a request to pull the volume of paid search nonbrand traffic landing on /home and /lander 1, trended weekly since June 1st and also pull the  overall paid search bounce rate trended weekly ? 
+5)The website manager has a request to pull the volume of paid search nonbrand traffic landing on /home and /lander 1, trended weekly since June 1st and also pull the  overall paid search bounce rate trended weekly  
 
 ```sql
 WITH sessions_count
@@ -477,7 +477,7 @@ As a next step,the Engineering team could roll this out to all customers
 Analyzing a portfolio of marketing channels is about bidding efficiently and using data to maximize the effectiveness of your marketing budget.
 This helps in understanding which marketing channels are driving the most sessions and orders through the website,optimizing bids and allocating marketing spend across a multi-channel portfolio to achieve maximum performance.
 
-1)The oragnization has launched another paid search channel-bsearch since Aug 22,2012.This marketing director has a data request to view weekly trended sessions since then and compare it to gsearch nonbrand
+1)The organization has launched another paid search channel-bsearch since Aug 22,2012.This marketing director has a data request to view weekly trended sessions since then and compare it to gsearch nonbrand
 
 ```sql
 WITH gsearch_nonbrand_sessions
